@@ -1,18 +1,21 @@
 package ru.netology;
+
 public class Manager {
-    private String[] movies = new String [0];
+    private String[] movies = new String[0];
     private int limit;
 
-    public Manager () {
+    public Manager() {
         this.limit = 10;
     }
+
     public Manager(int limit) {
         this.limit = limit;
     }
-    public void add (String movie) {
-        String[] tmp = new String [movies.length + 1];
-        for (int i = 0; i < movies.length; i ++) {
-            tmp [i] = movies [i];
+
+    public void add(String movie) {
+        String[] tmp = new String[movies.length + 1];
+        for (int i = 0; i < movies.length; i++) {
+            tmp[i] = movies[i];
         }
         tmp[tmp.length - 1] = movie;
         movies = tmp;
@@ -22,30 +25,25 @@ public class Manager {
         return movies;
     }
 
-   public String[] findLast() {
+    public String[] findLast() {
 
-       int resultlength;
-       if (movies.length < limit) {
-           resultlength = movies.length;
-       } else {
-           resultlength = limit;
-       }
-        String[] result = new String [resultlength];
+        int resultlength;
+        if (movies.length < limit) {
+            resultlength = movies.length;
+        } else {
+            resultlength = limit;
+        }
+        String[] result = new String[resultlength];
 
 
         for (int i = 0; i < result.length; i++) {
-            result [i] = movies [movies.length - 1 - i];
+            result[i] = movies[movies.length - 1 - i];
 
         }
         return result;
 
 
-
-
-
-
-   }
-
+    }
 
 
 }
